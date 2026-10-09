@@ -1,0 +1,84 @@
+/* Maquette dr-houyoux.ch : codes du site actuel (Varela Round, Varela, Roboto, menthe)
+   + finitions inspirées d'Emil Kowalski (sobriété, transitions douces) */
+:root{--mint:#7ECBAB;--btn:#61CEAF;--btn-dark:#4FB596;--nav:#388B7E;--h:#347572;--text:#7A7A7A;--ink:#4B4F58;--bg:#F7F8F9;--line:#E4ECE9;
+--ease:cubic-bezier(.23,1,.32,1);--shadow:0 1px 2px rgba(52,117,114,.06),0 8px 24px -12px rgba(52,117,114,.18)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,Arial,sans-serif;font-size:16px;line-height:1.8;color:var(--text);background:#fff;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:var(--nav)}
+figure{margin:0}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+.topbar{background:var(--mint);color:#fff;font-size:15px}
+.topbar .wrap{display:flex;justify-content:center;height:44px;align-items:center}
+.topbar span{padding:0 24px;border-left:1px solid rgba(255,255,255,.55)}
+.topbar span:first-child{border:0}
+.header{background:linear-gradient(90deg,#fff 0%,#fff 35%,#d4ebe1 65%,var(--mint) 100%);box-shadow:0 6px 16px -10px rgba(0,0,0,.3);position:relative;z-index:3}
+.header .wrap{max-width:1360px;display:flex;align-items:center;justify-content:space-between;height:120px}
+.header img.logo{height:92px;width:auto}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-family:'Varela Round',sans-serif;font-size:15px;font-weight:500;text-transform:uppercase;color:var(--nav);text-decoration:none;white-space:nowrap;position:relative;padding:6px 0}
+.nav a:not(.cta)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--nav);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a.on::after{transform:scaleX(1)}
+@media (hover:hover){.nav a:not(.cta):hover::after{transform:scaleX(1)}}
+.btn,.nav a.cta{display:inline-flex;align-items:center;justify-content:center;background:var(--btn);color:#fff;font-family:Roboto,sans-serif;font-weight:500;font-size:14px;letter-spacing:.6px;text-transform:uppercase;text-decoration:none;padding:14px 24px;border-radius:4px;transition:transform .16s var(--ease),background-color .2s}
+.btn:active,.nav a.cta:active{transform:scale(.97)}
+@media (hover:hover){.btn:hover,.nav a.cta:hover{background:var(--btn-dark)}}
+.banner{height:300px;background:#8fb9ab center/cover no-repeat;display:flex;align-items:center;justify-content:center;position:relative}
+.banner::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.25))}
+.banner h1{position:relative;margin:0;color:#fff;font-weight:100;font-size:clamp(60px,10vw,150px);letter-spacing:-4px;text-transform:uppercase;line-height:1}
+.sec{padding:96px 0}
+.sec.grey{background:var(--bg)}
+h2{font-family:Varela,sans-serif;font-weight:600;font-size:27px;color:var(--h);text-transform:uppercase;margin:0 0 18px;letter-spacing:.3px}
+h3{font-family:Varela,sans-serif;font-weight:600;font-size:19px;color:var(--h);margin:0 0 8px}
+.kicker{font-family:'Varela Round',sans-serif;color:var(--btn-dark);font-size:14px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px}
+.lead{font-size:18px;max-width:760px}
+.center{text-align:center}.center .lead{margin:0 auto}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.split img{border-radius:10px;box-shadow:var(--shadow);background:#e9f1ee;min-height:260px;object-fit:cover}
+p{margin:0 0 16px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px;text-align:left}
+.cards.three{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border-radius:12px;padding:26px 24px;box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+@media (hover:hover){.card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(52,117,114,.06),0 18px 40px -18px rgba(52,117,114,.35)}}
+.card .n{font-weight:100;font-size:44px;line-height:1;color:var(--btn);margin-bottom:12px}
+.card p{font-size:15px;line-height:1.7;margin:0}
+.quote{border-left:3px solid var(--btn);background:var(--bg);border-radius:0 10px 10px 0;padding:24px 28px;margin-top:34px;font-size:17px;color:var(--ink);font-style:italic}
+.sec.grey .quote{background:#fff}
+.quote b{font-style:normal;color:var(--h);display:block;margin-top:10px;font-size:14px;font-family:'Varela Round'}
+.yt{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,60,55,.55);margin-top:36px;background:#1d2b28}
+.yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.vids video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:12px;background:#1d2b28;box-shadow:var(--shadow)}
+.vids figcaption{font-size:14px;margin-top:8px;text-align:center}
+.badge{display:inline-flex;gap:8px;align-items:center;background:#E8F6F0;color:var(--h);border-radius:999px;padding:6px 14px;font-size:14px;font-family:'Varela Round'}
+.tabs{display:inline-flex;position:relative;background:#fff;border-radius:999px;padding:4px;margin:26px 0 30px;box-shadow:var(--shadow)}
+.tabs button{position:relative;z-index:1;border:0;background:transparent;font-family:'Varela Round';font-size:15px;color:var(--nav);padding:10px 22px;border-radius:999px;cursor:pointer;transition:color .25s}
+.tabs button[aria-selected=true]{color:#fff}
+.tabs .ind{position:absolute;top:4px;left:4px;height:calc(100% - 8px);border-radius:999px;background:var(--btn);transition:transform .35s var(--ease),width .35s var(--ease)}
+.panel{display:none}.panel.on{display:block;animation:in .45s var(--ease)}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.gallery img{width:100%;border-radius:10px;box-shadow:var(--shadow);background:#e9f1ee;min-height:200px;object-fit:cover}
+.note{font-size:13px;line-height:1.6;color:#9a9a9a;margin-top:24px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px;counter-reset:s}
+.step{background:#fff;border-radius:12px;padding:26px 24px;box-shadow:var(--shadow);counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#E8F6F0;color:var(--h);font-family:'Varela Round';margin-bottom:14px}
+.step p{margin:0;font-size:15px;line-height:1.7}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-family:Varela;font-weight:600;color:var(--h);font-size:18px;text-transform:uppercase}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary i{width:28px;height:28px;border-radius:50%;background:#E8F6F0;position:relative;flex-shrink:0;transition:transform .3s var(--ease)}
+.acc summary i::before,.acc summary i::after{content:"";position:absolute;left:8px;right:8px;top:13px;height:2px;background:var(--h)}
+.acc summary i::after{transform:rotate(90deg)}
+.acc details[open] summary i{transform:rotate(45deg)}
+.acc .body{padding:0 0 22px}
+.rdv{background:linear-gradient(120deg,var(--mint),#a6dcc5);color:#fff;text-align:center;padding:80px 0}
+.rdv h2{color:#fff;font-size:34px}
+.rdv p{color:#f3fbf7;max-width:660px;margin:0 auto 28px;font-size:17px}
+.rdv .btn{background:#fff;color:var(--h);margin:6px}
+.rdv .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #fff}
+footer{background:#3f4a48;color:#c9d3d0;text-align:center;font-size:14px;padding:28px}
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.vis{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+@media (max-width:960px){.nav a:not(.cta){display:none}.split,.cards,.cards.three,.steps,.vids,.gallery{grid-template-columns:1fr}.sec{padding:64px 0}}
