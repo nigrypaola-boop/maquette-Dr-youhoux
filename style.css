@@ -82,3 +82,210 @@ footer{background:#3f4a48;color:#c9d3d0;text-align:center;font-size:14px;padding
 .reveal.vis{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
 @media (max-width:960px){.nav a:not(.cta){display:none}.split,.cards,.cards.three,.steps,.vids,.gallery{grid-template-columns:1fr}.sec{padding:64px 0}}
+
+/* v2 — retours du Dr Houyoux */
+html{scroll-behavior:smooth}
+.disclaimer{background:#fff;border:1px solid var(--line);border-left:3px solid var(--h);border-radius:0 10px 10px 0;padding:22px 26px;margin:0 0 44px;font-size:15px;line-height:1.7;color:var(--ink)}
+.disclaimer b{display:block;font-family:Varela,sans-serif;color:var(--h);text-transform:uppercase;font-size:14px;letter-spacing:.5px;margin-bottom:6px}
+.sec:not(.grey) .disclaimer{background:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px}
+.chips a{font-family:'Varela Round';font-size:14px;color:var(--nav);text-decoration:none;background:#fff;border-radius:999px;padding:8px 18px;box-shadow:var(--shadow);transition:background-color .2s,color .2s}
+@media (hover:hover){.chips a:hover{background:var(--btn);color:#fff}}
+.zone{margin-top:52px;scroll-margin-top:24px}
+.zone>h3{font-size:21px;text-transform:uppercase;letter-spacing:.3px;padding-bottom:12px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.case img{width:100%;border-radius:10px;box-shadow:var(--shadow);background:#e9f1ee}
+.case figcaption{font-size:15px;line-height:1.65;margin-top:12px}
+.case.wide{grid-column:1/-1}
+.facts{background:var(--bg);border-radius:14px;padding:30px 32px;display:grid;gap:22px}
+.facts div{border-left:2px solid var(--btn);padding-left:18px}
+.facts .n{font-weight:100;font-size:40px;line-height:1;color:var(--btn)}
+.facts p{margin:4px 0 0;font-size:15px;line-height:1.6}
+.must{display:inline-flex;align-items:center;gap:8px;background:var(--h);color:#fff;border-radius:999px;padding:6px 16px;font-size:13px;font-family:'Varela Round';text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+.step a{font-size:14px}
+.after{max-width:760px;margin:28px auto 0;font-size:16px}
+@media (max-width:960px){.cases{grid-template-columns:1fr}}
+
+/* v3 — ouverture + responsive */
+.hero{padding:72px 0 88px;background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.hero-img{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(20,60,55,.45);aspect-ratio:4/5;background:#e9f1ee}
+.hero-img img{width:100%;height:100%;object-fit:cover}
+.hero-img figcaption{position:absolute;left:12px;bottom:10px;font-size:11px;color:#fff;background:rgba(0,0,0,.28);padding:2px 8px;border-radius:999px}
+.encart{background:#fff;border-radius:16px;padding:40px 40px 36px;box-shadow:var(--shadow);border-top:3px solid var(--btn)}
+.encart h2{font-size:26px;line-height:1.3}
+.why{list-style:none;padding:0;margin:22px 0 28px;display:grid;gap:16px}
+.why li{display:grid;grid-template-columns:28px 1fr;column-gap:14px}
+.why li::before{content:"";grid-row:span 2;width:28px;height:28px;border-radius:50%;background:#E8F6F0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23347572' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/14px no-repeat}
+.why b{font-family:Varela,sans-serif;color:var(--h);font-weight:600;font-size:16px;line-height:1.4}
+.why span{font-size:15px;line-height:1.6}
+.burger{display:none;width:44px;height:44px;border:0;background:rgba(255,255,255,.7);border-radius:10px;cursor:pointer;padding:0;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{display:block;width:20px;height:2px;background:var(--nav);border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.menu-open .burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media (max-width:960px){
+  .nav a:not(.cta){display:block}
+  .burger{display:flex}
+  .header .wrap{height:84px;padding:0 16px}
+  .header img.logo{height:60px}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:8px 20px 20px;box-shadow:0 18px 30px -18px rgba(0,0,0,.3);opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity .25s var(--ease),transform .25s var(--ease)}
+  .menu-open .nav{opacity:1;transform:none;pointer-events:auto}
+  .nav a:not(.cta){padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+  .nav a:not(.cta)::after{display:none}
+  .nav a.on{color:var(--btn-dark)}
+  .nav a.cta{margin-top:16px;padding:16px}
+  .topbar{font-size:13px}.topbar .wrap{height:auto;padding:8px 12px;flex-wrap:wrap}
+  .topbar span{padding:2px 10px}
+  .wrap{padding:0 16px}
+  .banner{height:180px}
+  .banner h1{font-size:clamp(40px,12vw,80px);letter-spacing:-2px}
+  .hero{padding:32px 0 56px}
+  .hero-grid{grid-template-columns:1fr;gap:24px}
+  .hero-img{aspect-ratio:16/10}
+  .encart{padding:26px 22px}
+  .encart h2{font-size:21px}
+  .encart .btn{width:100%}
+  h2{font-size:22px}
+  .lead{font-size:16px}
+  .facts{padding:22px}
+  .zone{margin-top:40px}
+  .vids{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:28px -16px 0;padding:0 16px 6px}
+  .vids figure{flex:0 0 72%;scroll-snap-align:start}
+  .quote{padding:20px;font-size:16px}
+  .disclaimer{padding:18px;font-size:14px}
+  .rdv{padding:56px 0}.rdv h2{font-size:26px}
+  .rdv .btn{display:flex;margin:10px 0}
+  .acc summary{font-size:16px}
+}
+@media (max-width:420px){.topbar span:nth-child(n+3){display:none}}
+
+/* v4 — page Lipœdème, landing (codes du Dr Houyoux + finitions Emil Kowalski) */
+.lp-hero{position:relative;padding:72px 0 40px;background:radial-gradient(1200px 500px at 85% 0%,#E8F6F0 0%,rgba(232,246,240,0) 60%),#fff;overflow:hidden}
+.lp-hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center}
+.lp-hero h1{font-family:Roboto,sans-serif;font-weight:300;font-size:clamp(34px,4.4vw,54px);line-height:1.12;letter-spacing:-1.2px;color:var(--h);margin:0 0 22px;text-wrap:balance}
+.lp-sub{font-size:18px;line-height:1.7;max-width:600px;color:#6d7270}
+.lp-quote{margin:28px 0 0;padding:0 0 0 20px;border-left:2px solid var(--btn);font-style:italic;font-size:18px;line-height:1.6;color:var(--ink);max-width:580px}
+.lp-quote cite,.lp-pull cite{display:block;margin-top:10px;font-style:normal;font-family:'Varela Round';font-size:13px;letter-spacing:.5px;color:var(--h)}
+.lp-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn.line{background:transparent;color:var(--h);box-shadow:inset 0 0 0 1px rgba(52,117,114,.35)}
+@media (hover:hover){.btn.line:hover{background:#E8F6F0}}
+.lp-portrait{position:relative;margin:0;border-radius:20px;overflow:hidden;background:#eef2f1;box-shadow:0 1px 1px rgba(0,0,0,.04),0 40px 80px -40px rgba(20,60,55,.5);aspect-ratio:4/5}
+.lp-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1) contrast(1.02)}
+.lp-portrait figcaption{position:absolute;left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:12px;padding:12px 16px;font-size:13px;line-height:1.4;color:var(--text)}
+.lp-portrait figcaption b{display:block;font-family:Varela;color:var(--h);font-size:15px}
+.lp-proof{list-style:none;margin:56px 0 0;padding:22px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.lp-proof b{display:block;font-weight:300;font-size:26px;color:var(--h);letter-spacing:-.5px;line-height:1.2}
+.lp-proof span{font-size:14px}
+.lp .sec h2{text-transform:none;font-size:clamp(24px,2.6vw,32px);letter-spacing:-.2px;line-height:1.25}
+.lp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.lp-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+@media (hover:hover){.lp-card:hover{transform:translateY(-2px);border-color:transparent;box-shadow:var(--shadow)}}
+.lp-num{display:inline-block;font-family:'Varela Round';font-size:12px;color:var(--btn-dark);background:#E8F6F0;border-radius:999px;padding:3px 10px;margin-bottom:14px}
+.lp-card p{font-size:15px;line-height:1.7;margin:0}
+.lp-pull{margin:48px auto 0;max-width:820px;text-align:center;font-family:Roboto;font-weight:300;font-style:normal;font-size:clamp(20px,2.4vw,28px);line-height:1.45;color:var(--h);letter-spacing:-.3px}
+.lp-pull cite{margin-top:16px}
+.lp-tech{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:start}
+.lp-specs{margin:0;background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:8px 24px}
+.lp-specs div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid var(--line)}
+.lp-specs div:last-child{border:0}
+.lp-specs dt{font-family:'Varela Round';font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--btn-dark)}
+.lp-specs dd{margin:0;color:var(--ink);font-size:15px}
+.disclaimer-site{font-style:italic;text-align:justify;line-height:2;font-size:15px;color:#8a8a8a;margin:0 0 40px}
+.disclaimer-site b{font-weight:700;color:#7A7A7A}
+.lp-steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.lp-steps li{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px 26px;counter-increment:s}
+.lp-steps li::before{content:counter(s);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#E8F6F0;color:var(--h);font-family:'Varela Round';margin-bottom:14px}
+.lp-steps li:first-child{border-color:var(--btn);box-shadow:0 0 0 3px #E8F6F0}
+.lp-steps li:first-child .must{position:absolute;top:-13px;right:18px;margin:0}
+.lp-steps p{font-size:15px;line-height:1.7;margin:0 0 8px}
+.lp-steps a{font-size:14px;font-family:'Varela Round'}
+.lp-video{background:linear-gradient(180deg,var(--bg),#fff)}
+.lp-dur{font-size:14px;margin:16px 0 26px}
+.lp-sticky{display:none}
+@media (max-width:960px){
+  .lp-hero{padding:28px 0 24px}
+  .lp-hero-grid{grid-template-columns:1fr;gap:28px}
+  .lp-portrait{order:-1;aspect-ratio:1/1;max-width:280px;width:72%;margin:0 auto;border-radius:50%}
+  .lp-portrait figcaption{display:none}
+  .lp-hero-txt{text-align:left}
+  .lp-sub,.lp-quote{font-size:16px}
+  .lp-ctas .btn{flex:1 1 100%}
+  .lp-proof{grid-template-columns:1fr;gap:14px;margin-top:32px}
+  .lp-proof li{display:flex;align-items:baseline;gap:12px}.lp-proof b{font-size:20px;min-width:120px}
+  .lp-cards,.lp-tech,.lp-steps{grid-template-columns:1fr}
+  .lp-tech{gap:28px}
+  .lp-steps{gap:22px}
+  .disclaimer-site{text-align:left;line-height:1.8;font-size:14px}
+  .lp-sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;justify-content:center;background:var(--btn);color:#fff;text-decoration:none;font-weight:500;text-transform:uppercase;letter-spacing:.6px;font-size:14px;padding:15px;border-radius:12px;box-shadow:0 12px 30px -10px rgba(20,60,55,.5);transform:translateY(140%);transition:transform .4s var(--ease)}
+  .lp-sticky.show{transform:none}
+  .lp footer{padding-bottom:90px}
+}
+
+/* v6 — lisibilité + finitions (page Lipœdème) */
+.lp{--read:#4F5856;--soft:#6B7472;color:var(--read)}
+.lp p{color:var(--read)}
+.lp .lead{font-size:19px;line-height:1.7;color:var(--soft);max-width:68ch}
+.lp .sec p:not(.lead):not(.disclaimer-site):not(.lp-dur){font-size:17px;line-height:1.8;max-width:68ch}
+.lp .sec{padding:112px 0}
+.lp-head{display:flex;flex-direction:column;gap:2px;margin-bottom:28px}
+.lp-head h2{margin:0;max-width:22ch}
+.lp .kicker{display:inline-flex;align-items:center;gap:10px}
+.lp .kicker::before{content:"";width:18px;height:1px;background:currentColor;opacity:.6}
+.header img.logo{mix-blend-mode:multiply}
+/* hero */
+.lp-hero{padding:88px 0 48px}
+.lp-hero h1{font-size:clamp(36px,4.6vw,58px);color:#2E6A67}
+.lp-sub{font-size:19px;color:var(--soft)}
+.lp-quote{font-size:19px;color:#3F4745;border-left-width:3px}
+.lp-portrait{aspect-ratio:1/1;border-radius:24px}
+.lp-portrait::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);pointer-events:none}
+.lp-proof li{padding-right:12px}
+.lp-proof b{color:#2E6A67}
+.lp-proof span{color:var(--soft)}
+/* résultats */
+.lp-results{background:linear-gradient(180deg,var(--bg) 0,#fff 260px)}
+.disclaimer-site{position:relative;font-size:15.5px;line-height:1.85;color:#6E6E6E;text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 26px 22px 58px;margin:0 0 56px;max-width:none}
+.disclaimer-site::before{content:"i";position:absolute;left:20px;top:22px;width:24px;height:24px;border-radius:50%;background:#E8F6F0;color:var(--h);font:600 14px/24px Varela,sans-serif;font-style:normal;text-align:center}
+.disclaimer-site b{color:#505050}
+.zone{margin-top:64px}
+.zone-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:24px}
+.zone-h h3{margin:0;font-size:22px;text-transform:uppercase;letter-spacing:.4px;border:0;padding:0}
+.zone-h span{font-family:'Varela Round';font-size:13px;color:var(--btn-dark)}
+.shot{margin:0 0 28px}
+.shot .zoom{display:block;width:100%;padding:0;border:0;background:#eef2f1;border-radius:14px;overflow:hidden;cursor:zoom-in;box-shadow:0 1px 2px rgba(0,0,0,.05),0 20px 40px -24px rgba(20,60,55,.35);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.shot img{width:100%;height:auto;display:block}
+@media (hover:hover){.shot .zoom:hover{transform:translateY(-2px);box-shadow:0 1px 2px rgba(0,0,0,.05),0 28px 50px -24px rgba(20,60,55,.45)}}
+.shot .zoom:active{transform:scale(.99)}
+.shot figcaption{margin-top:14px;font-size:16px;line-height:1.65;color:var(--soft);max-width:70ch;padding-left:14px;border-left:2px solid #CDEBDD}
+.pair{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
+.strip{display:grid;grid-template-columns:.68fr 1.33fr .66fr .66fr;gap:14px;margin-bottom:28px;align-items:stretch}
+.strip .shot{margin:0}.strip .zoom,.strip img{height:100%}.strip img{object-fit:cover}
+/* cartes et citations */
+.lp-card{padding:30px}
+.lp-card h3{font-size:19px;margin-bottom:10px}
+.lp-card p{font-size:16px!important;line-height:1.75!important;color:var(--read)}
+.lp-pull{color:#2E6A67;font-size:clamp(21px,2.5vw,30px)}
+.lp-specs dd{color:#3F4745;font-size:16px}
+/* lightbox */
+.lightbox{border:0;padding:0;background:transparent;max-width:min(96vw,1600px);max-height:92vh;overflow:visible}
+.lightbox::backdrop{background:rgba(18,30,28,.82);backdrop-filter:blur(4px)}
+.lightbox img{display:block;max-width:min(96vw,1600px);max-height:88vh;border-radius:10px;animation:lb .35s var(--ease)}
+@keyframes lb{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.lb-close{position:absolute;top:-44px;right:0;width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:var(--h);font-size:22px;line-height:1;cursor:pointer}
+@media (max-width:960px){
+  .lp .sec{padding:64px 0}
+  .lp .lead,.lp-sub{font-size:17px}
+  .lp .sec p:not(.lead):not(.disclaimer-site):not(.lp-dur){font-size:16px}
+  .lp-quote{font-size:17px}
+  .lp-portrait{border-radius:50%}
+  .disclaimer-site{padding:18px 18px 18px 50px;font-size:14.5px;margin-bottom:40px}
+  .disclaimer-site::before{left:16px;top:18px}
+  .zone{margin-top:44px}
+  .pair{grid-template-columns:1fr;gap:0}
+  .strip{grid-template-columns:1fr 1fr;gap:10px}
+  .strip .shot:nth-child(2){grid-column:1/-1;order:-1}
+  .shot figcaption{font-size:15px}
+}
+.shot.narrow{max-width:860px}
+@media (max-width:960px){.lp-portrait{max-width:190px}.lp-hero-grid{gap:20px}}
