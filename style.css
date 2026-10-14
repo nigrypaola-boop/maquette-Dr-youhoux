@@ -289,3 +289,7 @@ html{scroll-behavior:smooth}
 }
 .shot.narrow{max-width:860px}
 @media (max-width:960px){.lp-portrait{max-width:190px}.lp-hero-grid{gap:20px}}
+.hero-img.doc{aspect-ratio:1/1}
+.hero-img.doc img{object-position:50% 25%}
+.hero-img.doc figcaption{left:14px;right:14px;bottom:14px;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--text);font-size:13px;line-height:1.4;padding:12px 16px;border-radius:12px}
+.hero-img.doc figcaption b{display:block;font-family:Varela;color:var(--h);font-size:15px}
